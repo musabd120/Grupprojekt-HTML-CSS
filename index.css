@@ -1,0 +1,369 @@
+    /*   Bakgrundsbild som innehåller arsenal loggan som bakgrund samt vilken font som används på hela body */
+
+    body {
+        background: url('./img/arse_background.jpg') no-repeat center center fixed;
+        background-size: cover;
+        margin: 0 auto;
+        font-family: 'Urbanist', sans-serif;
+        max-width: 1200px;
+        width: 100%;
+    }
+
+    /*  Loggan som ska sitter i ovanpå  huvudrubriken */
+
+    #logga {
+        width: 10em;
+    }
+
+
+    header {
+        text-align: center;
+        /* en linear gradient som 'smälter in färg kontrasten */
+        background: linear-gradient(to bottom, #F21919 0%, #000000 100%);
+    }
+
+    h1 {
+        color: seashell;
+        grid-column: 100%;
+    }
+
+
+    li {
+        list-style-type: none;
+    }
+
+    /*a elementen inne i li som är inne i klassen*/
+    li a {
+        background-color: black;
+        padding: 8px;
+        color: seashell;
+        font-size: 2em;
+        position: relative;
+        animation-name: lysUpp;
+        animation-duration: 2s;
+    }
+
+    /*ul har en inbyggt padding vilket jag tar bort för att få den center center */
+    ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    article,
+    section {
+        background-color: rgba(255, 255, 255, 0.7);
+        text-align: center;
+    }
+
+    .rubrikStyle {
+        font-family: fantasy;
+        color: rgb(3, 3, 3);
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    /*  används på hemsidan för rubrikens font */
+
+    #tabellRubrik {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+
+    table {
+        width: 100%;
+    }
+
+
+
+    table,
+    th,
+    td {
+        border-collapse: collapse;
+        border: 1px solid black;
+
+    }
+
+    /*  stil egenskaper som hamnar på botten av hemsidan  */
+
+    footer {
+        background-color: red;
+        text-align: center;
+        font-size: 2em;
+        font-family: cursive;
+    }
+
+
+
+    /*ingår inte i uppgiften men rolig grej för animation*/
+    @keyframes lysUpp {
+        0% {
+            background-color: white;
+            left: 0%;
+            top: 0%
+        }
+
+        100% {
+            background-color: black;
+            left: 0%;
+            top: 0%
+        }
+    }
+
+    /* Media query som anpassar nav baren till mobile view */
+
+    @media (max-width: 480px) {
+
+        ul {
+            padding-left: 0%;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    /* Huvudrubriken 'Spelartrupp' font egenskaper och stil */
+
+    #headin {
+        text-align: center;
+        font-size: xx-large;
+        text-decoration: none;
+        color: black;
+        margin: 30px;
+        display: block;
+    }
+
+    /* Profilens struktur är en grid layout som är centrerad i mitten */
+
+    #profil {
+        justify-content: center;
+        display: grid;
+        grid-template-columns: auto auto auto;
+        text-align: center;
+        align-items: center;
+    }
+
+    /* bilden struktur och ram */
+
+    .profil_bild {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin: 0 auto 0 auto;
+    }
+
+    /* namn till för profilen*/
+
+    .profil_namn {
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+
+    /* Titeln för profilbilden*/
+
+    .profil_titel {
+        margin-bottom: 10px;
+    }
+
+
+    /* Här använde jag några speciala effekter på listan*/
+
+    .col {
+        background-color: lightslategray;
+        font-weight: bold;
+        font-size: large;
+    }
+
+    .pos:hover {
+        background-color: darkgreen;
+    }
+
+    .pos td {
+        color: black;
+    }
+
+    .pos:hover td {
+        color: white;
+    }
+
+    /* Här gjorde jag en id för rubriken så att den har en finare 'font' samt för att den ska se ut som en rubrik */
+    #rubrikstyle {
+        font-weight: bold;
+        font-size: xx-large;
+        text-decoration: none;
+        color: black;
+        margin: 30px;
+        display: block;
+    }
+
+    /* Denna img tag använde jag för att ändra på bildramen så att den ser lite finare ut 'om kan säga så' */
+
+    img {
+        padding: 1rem;
+        float: none;
+        border-radius: 100px;
+    }
+
+    /* Denna media query är till för huvudrubriken eftersom den anpassar inte i mindre storlek gjorde jag en media query för att den ska kunna funka i mobile view */
+
+    @media (max-width: 505px) {
+
+        .huvudrubrik {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    }
+
+    /* Denna media query är till för mobile view för bilderna på spelarna. Den staplar från grid layout till flex column*/
+    @media (max-width:550px) {
+        #profil {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .profil_1 {
+            order: 1;
+        }
+
+        .profil_2 {
+            order: 4;
+        }
+
+        .profil_3 {
+            order: 5;
+        }
+
+        .profil_4 {
+            order: 28;
+        }
+
+        .profil_5 {
+            order: 12;
+        }
+
+        .profil_6 {
+            order: 2;
+        }
+
+        .profil_7 {
+            order: 18;
+        }
+
+        .profil_8 {
+            order: 3;
+        }
+
+        .profil_9 {
+            order: 6;
+        }
+
+        .profil_10 {
+            order: 19;
+        }
+
+        .profil_11 {
+            order: 20;
+        }
+
+        .profil_12 {
+            order: 13;
+        }
+
+        .profil_13 {
+            order: 7;
+        }
+
+        .profil_14 {
+            order: 14;
+        }
+
+        .profil_15 {
+            order: 15;
+        }
+
+        .profil_16 {
+            order: 8;
+        }
+
+        .profil_17 {
+            order: 29;
+        }
+
+        .profil_18 {
+            order: 21;
+        }
+
+        .profil_19 {
+            order: 30;
+        }
+
+        .profil_20 {
+            order: 31;
+        }
+
+        .profil_21 {
+            order: 9;
+        }
+
+        .profil_22 {
+            order: 32;
+        }
+
+        .profil_23 {
+            order: 10;
+        }
+
+        .profil_24 {
+            order: 16;
+        }
+
+        .profil_25 {
+            order: 22;
+        }
+
+        .profil_26 {
+            order: 23;
+        }
+
+        .profil_27 {
+            order: 17;
+        }
+
+        .profil_28 {
+            order: 33;
+        }
+
+        .profil_29 {
+            order: 24;
+        }
+
+        .profil_30 {
+            order: 25;
+        }
+
+        .profil_31 {
+            order: 26;
+        }
+
+        .profil_32 {
+            order: 11;
+        }
+
+        .profil_33 {
+            order: 34;
+        }
+
+        .profil_34 {
+            order: 27;
+        }
+
+    }
